@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bottom_sheet_background"
+    tools:context=".fragment.GraphParameters">
+
+    <Button
+        android:id="@+id/button_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="611dp"
+        android:text="Speed"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_left_part"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- Left part of the layout -->
+    <LinearLayout
+        android:id="@+id/linearLayout_left_part"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/view_vertical"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="294dp">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="85dp"
+            android:background="@android:color/transparent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="@dimen/bottom_sheet_default_row_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="Left"
+                android:textColor="@color/bottom_sheet_text_color"
+                android:textSize="@dimen/bottom_sheet_text_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginTop="@dimen/bottom_sheet_default_row_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_hand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hand:"
+                android:textColor="@color/bottom_sheet_text_color"
+                android:textSize="@dimen/bottom_sheet_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout_LH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Switch with text below -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="77dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dx_LH"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dx/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dy_LH"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dy/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dz_LH"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dz/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginTop="@dimen/bottom_sheet_default_row_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_elbow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elbow:"
+                android:textColor="@color/bottom_sheet_text_color"
+                android:textSize="@dimen/bottom_sheet_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout_LE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Switch with text below -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="77dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dx_LE"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dx/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dy_LE"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dy/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dz_LE"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dz/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginTop="@dimen/bottom_sheet_default_row_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_shoulder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shoulder:"
+                android:textColor="@color/bottom_sheet_text_color"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout_LS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Switch with text below -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="77dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dx_LS"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dx/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dy_LS"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dy/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dz_LS"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dz/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+            android:id="@+id/button_record_datas"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="193dp"
+            android:backgroundTint="@color/button_record_datas_color"
+            android:textColor="@color/text_button_record_datas_color"
+            android:textOff="Record Datas"
+            android:textOn="Data recording " />
+
+        <!-- Repeat above ConstraintLayout for Elbow and Shoulder as needed -->
+
+    </LinearLayout>
+
+    <!-- Vertical divider -->
+    <View
+        android:id="@+id/view_vertical"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="55dp"
+        android:background="@android:color/darker_gray"
+        android:rotationX="6"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout_left_part"
+        app:layout_constraintStart_toEndOf="@id/linearLayout_right_part" />
+
+    <!-- Right part of the layout -->
+    <LinearLayout
+        android:id="@+id/linearLayout_right_part"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/view_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Add content for the right part of the layout -->
+
+        <View
+            android:id="@+id/view_right"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="85dp"
+            android:background="@android:color/transparent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="@dimen/bottom_sheet_default_row_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Right"
+                android:textColor="@color/bottom_sheet_text_color"
+                android:textSize="@dimen/bottom_sheet_text_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginTop="@dimen/bottom_sheet_default_row_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout_RH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Switch with text below -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="77dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dx_RH"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dx/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dy_RH"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dy/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dz_RH"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dz/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginTop="@dimen/bottom_sheet_default_row_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout_RE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Switch with text below -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="77dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dx_RE"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dx/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dy_RE"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dy/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dz_RE"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dz/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginTop="@dimen/bottom_sheet_default_row_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout_RS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Switch with text below -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="77dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dx_RS"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dx/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dy_RS"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dy/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="76dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dz_RS"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text=""
+                        android:thumbTint="@color/switch_thumb_color"
+                        android:trackTint="@color/switch_track_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dz/dt"
+                        android:textColor="@color/bottom_sheet_text_color"
+                        android:textSize="@dimen/bottom_sheet_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <Button
+            android:id="@+id/button_acces_datas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="193dp"
+            android:backgroundTint="@color/button_access_datas_color"
+            android:text="Access datas" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
